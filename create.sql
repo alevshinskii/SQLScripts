@@ -9,7 +9,7 @@ CREATE TABLE Customer
     CustomerId INT IDENTITY(1,1) PRIMARY KEY,
     FirstName NVARCHAR(50) CHECK (LEN(FirstName)<=50),
     LastName NVARCHAR(50) NOT NULL CHECK (LEN(LastName)<=50),
-    PhoneNumber NVARCHAR(15) CHECK (LEN(PhoneNumber)<=15 AND LEN(PhoneNumber)>0 AND TRY_CONVERT(bigint, PhoneNumber) IS NOT NULL),
+    PhoneNumber NVARCHAR(15) CHECK (LEN(PhoneNumber)<=15 AND LEN(PhoneNumber)>0),
     Email NVARCHAR(255) CHECK(Email LIKE  '%@%.%'),
     TotalPurchasesAmount MONEY CHECK(TotalPurchasesAmount >= 0)
 )
